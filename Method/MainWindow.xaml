@@ -1,0 +1,28 @@
+﻿<Window x:Class="Method.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Method"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="симплекс метод" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10" />
+            <TextBlock Text="Ограничения (через запятую):" FontWeight="Bold" Margin="0,10,547.6,0" />
+            <TextBox x:Name="ConstraintsTextBox" Text="1,0,4;0,2,12;3,2,18" 
+                     ToolTip="Enter each constraint on a new line. Format: coefficients and RHS separated by commas." Margin="0,0,547.6,0" />
+            <TextBlock Text="Целевая функция:" FontWeight="Bold" Margin="0,0,-0.4,0" />
+            <TextBox x:Name="ObjectiveFunctionTextBox" Text="3,5" ToolTip="Enter coefficients of the objective function, separated by commas" Margin="0,0,547.6,0" />
+
+            <Button Content="Решить" Name="SolveButton" Click="SolveButton_Click" Margin="0,10,0,0" />
+        </StackPanel>
+
+        <TextBox Name="ResultTextBox" Grid.Row="1" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+    </Grid>
+</Window>
